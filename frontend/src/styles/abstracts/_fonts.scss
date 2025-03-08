@@ -1,0 +1,17 @@
+$font-weight-light: 200;
+$font-weight-regular: 400;
+$font-weight-semibold: 600;
+$font-weight-bold: 800;
+
+.font-libre-franklin {
+  font-family: "Libre Franklin", sans-serif;
+}
+
+.font-eczar {
+  font-family: "Eczar", serif;
+}
+
+body {
+  font-family: "Libre Franklin", sans-serif;
+  font-weight: $font-weight-regular;
+}
