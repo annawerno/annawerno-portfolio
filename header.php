@@ -9,10 +9,7 @@
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<header>
-    <div class="container__fluid">
-        <h1><?php bloginfo('name'); ?></h1>
-        <nav><?php wp_nav_menu(array('theme_location' => 'main-menu')); ?></nav>
-    </div>
-</header>
+
+<?php get_template_part("templates/t__header"); ?>
+
 <main>

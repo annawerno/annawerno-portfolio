@@ -1,0 +1,16 @@
+@use "../abstracts" as *;
+
+#header__container {
+  display: flex;
+  justify-content: space-between;
+
+  .header__logo {
+    width: 18.75rem; // 300px;
+  }
+
+  .header__menu {
+    .menu {
+      display: flex;
+    }
+  }
+}
