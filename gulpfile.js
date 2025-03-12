@@ -25,15 +25,19 @@ function styles() {
 }
 
 // scripts
+import concat from "gulp-concat";
 import jsMinify from "gulp-terser";
+import babel from "gulp-babel";
 
 // scripts task
 function scripts() {
   return gulp
     .src("./frontend/src/scripts/**/*.js")
-    .pipe(jsMinify())
+    .pipe(concat("app.js")) // ✅ Merge all JS into one
+    .pipe(babel({ presets: ["@babel/preset-env"] })) // ✅ Convert ES6+ to browser-compatible JS
+    .pipe(jsMinify()) // ✅ Minify it
     .pipe(gulp.dest("./frontend/dist/scripts/"))
-    .pipe(bs.stream()); // Injects JS changes
+    .pipe(bs.stream());
 }
 
 // Browsersync reload task

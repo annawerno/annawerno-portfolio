@@ -9,9 +9,10 @@
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<header style="background-color:bisque">
+<header>
     <div class="container__fluid">
         <h1><?php bloginfo('name'); ?></h1>
         <nav><?php wp_nav_menu(array('theme_location' => 'main-menu')); ?></nav>
     </div>
 </header>
+<main>

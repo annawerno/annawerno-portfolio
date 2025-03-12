@@ -1,0 +1,17 @@
+@use "../abstracts" as *;
+
+.hero {
+  padding: 3rem 0;
+
+  #hero__hello {
+    text-transform: uppercase;
+    font-family: "Eczar", serif;
+    font-size: clamp(2.125rem, 1.4728rem + 3.2609vw, 5.125rem); // 34px -> 82px
+
+    min-height: 40vh;
+
+    @media (min-width: 768px) {
+      min-height: 35vh;
+    }
+  }
+}
