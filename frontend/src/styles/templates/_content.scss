@@ -1,0 +1,6 @@
+@use "../abstracts" as *;
+@use "../mixins" as *;
+
+#about-me {
+  @include text-standard;
+}

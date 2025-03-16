@@ -1,3 +1,7 @@
+body {
+  padding-right: 60px;
+}
+
 .container__fluid {
   width: 92%;
   margin: 0 auto;
@@ -8,4 +12,11 @@
 .container__full {
   background-color: aquamarine;
   padding: 2rem;
+}
+
+#header__container,
+#footer__container .container__fluid {
+  max-width: 2100px;
+  width: 100%;
+  padding: 0.5rem;
 }

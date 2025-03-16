@@ -1,8 +1,12 @@
 // Abstracts
-@use "abstracts";
+// @use "abstracts";
 
 // Mixins
-@use "mixins";
+// @use "mixins";
 
 // Templates
 @use "templates/hero.scss";
+@use "templates/header.scss";
+@use "templates/footer.scss";
+@use "templates/sidebar.scss";
+@use "templates/content.scss";
