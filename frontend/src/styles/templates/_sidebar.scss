@@ -6,12 +6,14 @@
   right: 0;
   width: 60px;
   height: 100vh;
-  background-color: #333;
+  background-color: $brightPink;
   color: white;
   transition: width 0.3s ease;
   overflow: hidden;
   white-space: nowrap;
   z-index: 1000;
+
+  // display: none;
 }
 .sidebar.expanded {
   width: 250px;

@@ -5,6 +5,10 @@
   display: flex;
   justify-content: space-between;
   position: sticky;
+  // position: relative;
+
+  align-items: center;
+  padding: 15px;
 
   .header__logo {
     width: 18.75rem; // 300px;
@@ -29,12 +33,73 @@
     }
   }
 
+  .header__menu-mob {
+    display: none;
+
+    @media (max-width: 1024px) {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      width: 30px;
+      height: 30px;
+      border: none;
+      cursor: pointer;
+      margin: auto 0;
+
+      span {
+        display: block;
+        width: 30px;
+        height: 4px;
+        background-color: $portfolioBlack;
+        border-radius: 5px;
+        transition: transform 0.3s, opacity 0.3s;
+      }
+
+      &.open span:nth-child(1) {
+        transform: rotate(45deg);
+        position: relative;
+        top: 10px;
+      }
+      &.open span:nth-child(2) {
+        opacity: 0;
+      }
+
+      &.open span:nth-child(3) {
+        transform: rotate(-45deg);
+        position: relative;
+        top: -10px;
+      }
+    }
+  }
+
   .header__menu {
     margin: auto;
+
+    @media (max-width: 1024px) {
+      border-top: 4px solid $seaGreen;
+      border-bottom: 4px solid $seaGreen;
+      position: absolute;
+      background-color: $portfolioWhite;
+      top: 100%;
+      left: 0;
+      width: calc(100% + 60px);
+      overflow: hidden; /* Hide content when collapsed */
+      opacity: 0; /* Make the menu invisible */
+      transition: opacity 0.3s ease-in-out;
+
+      &.active {
+        opacity: 1; /* Make it visible */
+      }
+    }
     .menu {
       display: flex;
       margin: 2rem;
       gap: 2rem;
+
+      @media (max-width: 1024px) {
+        flex-direction: column;
+      }
 
       .menu-item {
         @include text-menu;
