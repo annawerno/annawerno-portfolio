@@ -1,0 +1,44 @@
+@use "../abstracts" as *;
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 100vh;
+  background-color: #333;
+  color: white;
+  transition: width 0.3s ease;
+  overflow: hidden;
+  white-space: nowrap;
+  z-index: 1000;
+}
+.sidebar.expanded {
+  width: 250px;
+}
+.sidebar button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  padding: 10px;
+  cursor: pointer;
+  text-align: left;
+}
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+}
+.nav-links a:hover {
+  background-color: #555;
+}
+.content {
+  padding: 20px;
+}

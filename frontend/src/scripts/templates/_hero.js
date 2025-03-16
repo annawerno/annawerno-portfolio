@@ -2,9 +2,9 @@ const heroHello = document.querySelector("#hero__hello");
 
 const sentences = [
   "Hello World",
-  "Hello ... is it me you're looking for?",
+  "Hello ...is it me you're looking for?",
   "Hello Clarice",
-  "Hello darkness, my old friend ...",
+  "Hello darkness, my old friend...",
   "Hello. My name is Inigo Montoya. You killed my father. Prepare to die!",
 ];
 

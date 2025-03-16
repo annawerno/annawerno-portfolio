@@ -11,5 +11,6 @@
 <body <?php body_class(); ?>>
 
 <?php get_template_part("templates/t__header"); ?>
+<?php get_template_part("templates/t__sidebar"); ?>
 
 <main>

@@ -1,1 +1,58 @@
+@use "../abstracts" as *;
+// Typography
 
+// Eczar (Heading and Subtitles)
+
+// Libre Franklin (Body & Miscellaneous)
+
+// font-size: clamp(2.125rem, 1.4728rem + 3.2609vw, 5.125rem); // 34px -> 82px
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Eczar", serif;
+}
+
+p,
+button,
+caption,
+a {
+  font-family: "Libre Franklin", sans-serif;
+  color: $portfolioBlack;
+}
+
+@mixin font-weight-bold {
+  font-weight: 700;
+}
+
+@mixin font-weight-semibold {
+  font-weight: 500;
+}
+
+@mixin font-weight-regular {
+  font-weight: 400;
+}
+
+@mixin font-weight-light {
+  font-weight: 200;
+}
+
+@mixin heading-large {
+  font-size: clamp(2.125rem, 1.4728rem + 3.2609vw, 5.125rem); // 34px -> 82px
+}
+
+@mixin text-standard {
+  font-size: clamp(0.9375rem, 0.9239rem + 0.0679vw, 1rem); // 15px -> 16px
+}
+
+@mixin text-button {
+  font-size: clamp(1.6875rem, 1.7283rem + -0.2038vw, 1.5rem); // 24px -> 27px
+  @include font-weight-semibold;
+}
+
+@mixin text-menu {
+  font-size: clamp(1.4375rem, 1.4783rem + -0.2038vw, 1.25rem); // 20px -> 23px
+}
