@@ -1,11 +1,11 @@
 <header id="header__container" class="container__fluid">
    
-        <div class="header__logo">
+        <a class="header__logo" href="/">
 
           <img src="<?= site_url(); ?>/wp-content/uploads/2025/03/annawerno-logo.webp" alt="annawerno logo" width="100%"/>
-        </div>
+        </a>
         <div class="header__menu-container" style="display: flex">
-          <button class="btn-contact">Let's chat</button>
+          <button class="btn-contact" onclick="window.location.href='#contact'">Let's chat</button>
 
 
 

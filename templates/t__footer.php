@@ -14,9 +14,9 @@
       </div>
 
 
-      <div class="f__logo">
+      <a class="f__logo" href="/">
         <img src="<?= site_url(); ?>/wp-content/uploads/2025/03/annawerno-logo-light.webp" alt="annawerno logo" width="100%"/>
-      </div>
+      </a>
 
   </section>
   <section class="container__fluid footer__sub">&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?> All Rights Reserved

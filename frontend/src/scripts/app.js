@@ -20,3 +20,25 @@ document.querySelectorAll(".header__menu a").forEach((item) => {
       .classList.remove("active");
   });
 });
+
+// Open the modal when a post is clicked
+function openModal(postName) {
+  var modal = document.getElementById(postName + "-modalOverlay");
+  modal.style.display = "flex"; // Show the modal
+}
+
+// Close the modal
+function closeModal(postName) {
+  var modal = document.getElementById(postName + "-modalOverlay");
+  modal.style.display = "none"; // Hide the modal
+}
+
+// Close modal when clicking outside the modal
+window.onclick = function (event) {
+  var modals = document.querySelectorAll(".portfolio__item-modal-overlay");
+  modals.forEach(function (modal) {
+    if (event.target === modal) {
+      modal.style.display = "none"; // Close modal when clicked outside
+    }
+  });
+};
