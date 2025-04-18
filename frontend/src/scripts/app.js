@@ -11,15 +11,22 @@ document.getElementById("nav-toggle").addEventListener("click", function () {
   document.querySelector(".header__menu-container").classList.toggle("active");
 });
 
+// Function to close the menu
+function closeMenu() {
+  document.getElementById("nav-toggle").classList.remove("open");
+  document.querySelector(".header__menu-container").classList.remove("active");
+}
+
 // Close menu when a menu item is clicked
 document.querySelectorAll(".header__menu a").forEach((item) => {
-  item.addEventListener("click", function () {
-    document.getElementById("nav-toggle").classList.remove("open");
-    document
-      .querySelector(".header__menu-container")
-      .classList.remove("active");
-  });
+  item.addEventListener("click", closeMenu);
 });
+
+// Also close menu when .btn-contact is clicked
+const contactBtn = document.querySelector(".btn-contact");
+if (contactBtn) {
+  contactBtn.addEventListener("click", closeMenu);
+}
 
 // Open the modal when a post is clicked
 function openModal(postName) {

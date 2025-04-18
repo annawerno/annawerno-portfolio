@@ -1,19 +1,21 @@
 const heroHello = document.querySelector("#hero__hello");
 
-const sentences = [
-  "Hello World",
-  "Hello ...is it me you're looking for?",
-  "Hello Clarice",
-  "Hello darkness, my old friend...",
-  "Hello. My name is Inigo Montoya. You killed my father. Prepare to die!",
-];
+// const sentences = [
+//   "Hello World",
+//   "Hello ...is it me you're looking for?",
+//   "Hello Clarice",
+//   "Hello darkness, my old friend...",
+//   "Hello. My name is Inigo Montoya. You killed my father. Prepare to die!",
+// ];
+
+const sentences = phpVariables.sentences;
 
 // Predefined colors for the rest of the sentence (after "Hello")
 const sentenceColors = ["#2C6E49", "#F26A8D", "#99CC33", "#4C956C", "#F39237"];
 
 let sentenceIndex = 0;
-const typingSpeed = 200;
-const deletingSpeed = 100;
+const typingSpeed = 100;
+const deletingSpeed = 50;
 
 // Function to display text letter by letter with colored first word
 function typeText(text, index, callback) {
@@ -99,3 +101,27 @@ function typeAndDeleteLoop() {
 
 // Start the loop
 typeAndDeleteLoop();
+
+document.addEventListener("DOMContentLoaded", function () {
+  document
+    .querySelector("a[href='#ref_answers']")
+    .addEventListener("click", function (event) {
+      event.preventDefault();
+
+      const target = document.getElementById("ref_answers-btn");
+
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+
+        // Wait for scroll to finish before pulsing
+        setTimeout(() => {
+          target.classList.add("pulse-effect");
+
+          // Remove the class after animation completes (1.5s for 3 pulses)
+          setTimeout(() => {
+            target.classList.remove("pulse-effect");
+          }, 1500);
+        }, 800); // Adjust delay based on scroll speed
+      }
+    });
+});

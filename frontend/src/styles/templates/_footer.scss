@@ -7,7 +7,8 @@
 
   .footer__main {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    // grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     padding: 2rem;
 
     @media (max-width: 1024px) {
@@ -30,23 +31,6 @@
               color: $carrotOrange;
             }
           }
-        }
-      }
-    }
-
-    .f__links-social {
-      // border: 3px solid yellow;
-      display: flex;
-      gap: 2rem;
-      justify-content: center;
-
-      @media (max-width: 1024px) {
-        justify-self: end;
-      }
-
-      a:hover {
-        path {
-          fill: $carrotOrange;
         }
       }
     }

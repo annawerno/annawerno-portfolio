@@ -26,7 +26,29 @@ $query = new WP_Query($args);
 
 </section>
 
+<?php /*
 <section id="skills"  class="container__fluid">
+
+<?php 
+$skill_args = array(
+    'post_type'      => 'skill', // Ensure the post type matches the one registered
+    'post_status'    => 'publish',
+    'posts_per_page' => -1, // Get all skills
+);
+
+$skills = new WP_Query($skill_args);
+
+if ($skills->have_posts()) : ?>
+    <ul class="skills-list">
+        <?php while ($skills->have_posts()) : $skills->the_post(); ?>
+            <li><?php the_title(); ?></li>
+        <?php endwhile; ?>
+    </ul>
+    <?php wp_reset_postdata(); ?>
+<?php else : ?>
+    <p>No skills found.</p>
+<?php endif; ?>
+
 
        <?php  $categories = get_categories(); 
        
@@ -38,10 +60,8 @@ $query = new WP_Query($args);
        
        <?php endforeach; ?>
 
-
-
-
 </section>
+*/ ?>
 
 <section id="portfolio" class="container__fluid">
 
@@ -71,22 +91,33 @@ $query = new WP_Query($args);
         <div class="portfolio__item-modal-overlay" id="<?= $post_name; ?>-modalOverlay">
             <div class="portfolio__item-modal">
                 <button class="modal-close" onclick="closeModal('<?= $post_name; ?>')">&times</button>
-                <h4 class="portfolio__item-modal-title"><?= the_title(); ?></h4>
-                <?= the_post_thumbnail('medium'); ?>
-                <p class="portfolio__item-modal-content"><?= the_content(); ?></p>
-                <a href="<?= $project_url; ?>">See project</a>
-                <a href="<?= $github_url; ?>">Check the code</a>
+                <div class="portfolio__item-body">
+                    <div class="portfolio__item-body_left">
+                        <?= the_post_thumbnail('medium'); ?>
+                        <?php
+                        if(!empty($post_categories)) { ?>
+                            <ul class="portfolio__categories">
+                            <?php foreach ($post_categories as $post_category) : ?>
+                                <li><?= esc_html( $post_category->name ); ?> </li>
 
-                <?php
-                if(!empty($post_categories)) { ?>
-                    <ul>
-                    <?php foreach ($post_categories as $post_category) : ?>
-                        <li><?= esc_html( $post_category->name ); ?> </li>
+                            <?php endforeach; ?>
+                            </ul>
+                            
+                        <?php } ?>
 
-                    <?php endforeach; ?>
-                    </ul>
+                        <div class="portfolio__cta">
+                            <a href="<?= $project_url; ?>" target="_blank">See project</a>
+                            <a href="<?= $github_url; ?>" target="_blank">Check the code</a>
+                        </div>
+
                     
-                <?php } ?>
+                    </div>
+                    <div class="portfolio__item-body_right">
+                        <h4 class="portfolio__item-modal-title"><?= the_title(); ?></h4>
+                        <p class="portfolio__item-modal-content"><?= the_content(); ?></p>
+                    </div>
+               
+                </div>
     
             </div>
         </div>
@@ -97,10 +128,55 @@ $query = new WP_Query($args);
 
 </section>
 
+
 <section id="contact" class="container__fluid">
 
-        <p>Let's chat!</p>
+        <p class="contact__heading">Looking for a chat tonic, collab brew or connect elixir? Whatever your flavour, pick your poison below.</p>
+
+        <div class="contact__options">
+            <a href="mailto:hello@annawerno.co.uk"><?= file_get_contents(get_template_directory() . '/img/socials/mail.svg'); ?></a>
+            <a href="https://github.com/annawerno" target="_blank"><?= file_get_contents(get_template_directory() . '/img/socials/github.svg'); ?></a>
+            <a href="https://www.linkedin.com/in/annawerno/" target="_blank"><?= file_get_contents(get_template_directory() . '/img/socials/linkedin.svg'); ?></a>
+
+
+        </div>
 
 
 </section>
+
+<?php 
+    $hellos = cpt_hello_ref_query();
+    // my_print_r($hellos);
+
+    if ($hellos->have_posts()) : 
+    ?>
+        <section id="ref_answers" class="container__fluid">
+
+            <button id="ref_answers-btn" class="accordion main">Peak here for the pop culture references</button>
+            <div class="panel">
+
+            <?php while($hellos->have_posts()) : $hellos->the_post();
+
+                $hello = get_post();
+                
+
+                ?>
+
+                <button class="accordion sub">
+                    <div class="a_sub__title"><?= $hello->post_title; ?></div>
+                </button>
+                <div class="panel sub">
+                    <p><?= the_content(); ?></p>
+                </div>
+    
+            <?php endwhile; 
+                wp_reset_postdata();
+                ?>
+            </div>
+        </section>
+<?php endif; ?>
+
+    
+
+
 
