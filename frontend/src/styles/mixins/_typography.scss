@@ -5,6 +5,8 @@
 
 // Libre Franklin (Body & Miscellaneous)
 
+// https://clamp.font-size.app/?config=eyJyb290IjoiMTYiLCJtaW5XaWR0aCI6IjMyMHB4IiwibWF4V2lkdGgiOiIxNzkycHgiLCJtaW5Gb250U2l6ZSI6IjQwcHgiLCJtYXhGb250U2l6ZSI6IjYwcHgifQ%3D%3D
+
 // font-size: clamp(2.125rem, 1.4728rem + 3.2609vw, 5.125rem); // 34px -> 82px
 
 h1,
@@ -42,10 +44,17 @@ a {
 
 @mixin heading-large {
   font-size: clamp(2.125rem, 1.4728rem + 3.2609vw, 5.125rem); // 34px -> 82px
+  font-family: "Eczar", serif;
+}
+
+@mixin text-large {
+  font-size: clamp(1.25rem, 1.2092rem + 0.2038vw, 1.4375rem); // 20px -> 23px
+  font-family: "Libre Franklin", sans-serif;
 }
 
 @mixin text-standard {
   font-size: clamp(0.9375rem, 0.9239rem + 0.0679vw, 1rem); // 15px -> 16px
+  font-family: "Libre Franklin", sans-serif;
 }
 
 @mixin text-button {
@@ -59,4 +68,5 @@ a {
 
 @mixin text-small {
   font-size: clamp(0.75rem, 0.7228rem + 0.1359vw, 0.875rem); // 12px -> 14px
+  font-family: "Libre Franklin", sans-serif;
 }

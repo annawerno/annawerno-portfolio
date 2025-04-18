@@ -2,14 +2,14 @@
 @use "../mixins" as *;
 
 .hero {
-  padding: 3rem 0;
+  padding: 0.5rem 0;
 
   #hero__hello {
     text-transform: uppercase;
     font-family: "Eczar", serif;
     @include heading-large;
     min-height: 70vh;
-    // height: 90vh;S
+    // height: 90vh;
 
     @media (min-width: 768px) {
       min-height: 50vh;

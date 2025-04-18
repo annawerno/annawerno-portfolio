@@ -2,8 +2,17 @@
 
 
 include( get_template_directory() . '/includes/include_scripts_styles.php' );
+include( get_template_directory() . '/includes/include_cpts.php' );
 
+function my_print_r($array_data) {
 
+  echo '<pre>';
+
+  print_r($array_data);
+
+  echo '</pre>';
+
+}
 
 
 // Theme setup
