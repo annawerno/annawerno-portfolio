@@ -1,6 +1,6 @@
 <?php
 
-
+include( get_template_directory() . '/includes/include_acf_functions.php' );
 include( get_template_directory() . '/includes/include_scripts_styles.php' );
 include( get_template_directory() . '/includes/include_cpts.php' );
 
