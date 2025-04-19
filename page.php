@@ -14,10 +14,10 @@
    
 </main>
 
-<main class="container__full">
+<main class="container__fluid">
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-        <article class="container__inner">
-            <h2>Container full</h2>
+        <article>
+            <h2 class="page-title"><?php the_title(); ?></h2>
             <?php the_content(); ?>
         </article>
     <?php endwhile; else : ?>

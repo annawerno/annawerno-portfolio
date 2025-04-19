@@ -48,5 +48,6 @@ wp-config.php
 #/wp-content/themes
 node_modules
 package-lock.json
-frontend/dist/styles/app.css
-frontend/dis/scripts/app.js
+frontend/dist/scripts/
+frontend/dist/styles/
+zips/

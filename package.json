@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm install && gulp"
+    "start": "npm install && gulp",
+    "zip": "mkdir zips && git archive -o zips/annawerno-portfolio.zip HEAD"
   },
   "repository": {
     "type": "git",

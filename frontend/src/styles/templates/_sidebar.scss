@@ -68,9 +68,10 @@
     transition: all 0.6s ease;
     gap: 2rem;
     padding: 0 2rem;
+    width: 100%;
 
     &-info {
-      width: fit-content;
+      // width: fit-content;
 
       .s_c__logo {
         width: 40%;

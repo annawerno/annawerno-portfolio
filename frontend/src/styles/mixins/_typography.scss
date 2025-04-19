@@ -47,6 +47,11 @@ a {
   font-family: "Eczar", serif;
 }
 
+@mixin heading-standard {
+  font-size: clamp(1.5rem, 1.2554rem + 1.2228vw, 2.625rem); // 24px -> 42px
+  font-family: "Eczar", serif;
+}
+
 @mixin text-large {
   font-size: clamp(1.25rem, 1.2092rem + 0.2038vw, 1.4375rem); // 20px -> 23px
   font-family: "Libre Franklin", sans-serif;

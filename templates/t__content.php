@@ -20,7 +20,7 @@ $query = new WP_Query($args);
 <section id="about-me" class="container__fluid">
     
     <div class="about_me_text"> <?= $about_me; ?></div>
-    <div class="about_me_image"><img width="100%" height="100%" src="<?= $about_me_image['url']; ?>" alt="<?= $about_me_image['alt']; ?>" /></div>
+    <div class="about_me_image"><img width="100%" height="auto" src="<?= $about_me_image['url']; ?>" alt="<?= $about_me_image['alt']; ?>" /></div>
     
 
 
@@ -72,9 +72,11 @@ if ($skills->have_posts()) : ?>
     
         $post_id = get_the_ID();
         $post_name = get_post_field( 'post_name', $post_id );
+        $post_subtitle = get_post_field( 'f__subtitle', $post_id );
         $project_url = get_field('f__project_url', $post_id);
         $github_url= get_field('f__github_url', $post_id);
         $post_categories = get_the_category(); 
+
 
         ?>
 
@@ -83,6 +85,7 @@ if ($skills->have_posts()) : ?>
             
            <div class="portfolio__item-text">
                 <h4 class="portfolio__item-title"><?= the_title(); ?></h4>
+                <p class="portfolio__item-subtitle"><?= $post_subtitle; ?></p>
             </div>
         </a>
 
@@ -97,8 +100,21 @@ if ($skills->have_posts()) : ?>
                         <?php
                         if(!empty($post_categories)) { ?>
                             <ul class="portfolio__categories">
-                            <?php foreach ($post_categories as $post_category) : ?>
-                                <li><?= esc_html( $post_category->name ); ?> </li>
+                            <?php foreach ($post_categories as $post_category) : 
+                                
+                                $parent_class = $post_category->category_parent;
+
+                                if($parent_class == 14) {
+                                    $parent_class = 'lang-markup';
+                                } elseif($parent_class == 15) {
+                                    $parent_class = 'fw-tools';
+                                } elseif($parent_class == 16) {
+                                    $parent_class = 'cms-plugins';
+                                }
+
+                                
+                                ?>
+                                <li class="<?= $parent_class; ?>"><?= esc_html( $post_category->name ); ?> </li>
 
                             <?php endforeach; ?>
                             </ul>
@@ -114,6 +130,7 @@ if ($skills->have_posts()) : ?>
                     </div>
                     <div class="portfolio__item-body_right">
                         <h4 class="portfolio__item-modal-title"><?= the_title(); ?></h4>
+                        <p class="portfolio__item-subtitle"><?= $post_subtitle; ?></p>
                         <p class="portfolio__item-modal-content"><?= the_content(); ?></p>
                     </div>
                
