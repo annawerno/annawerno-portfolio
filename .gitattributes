@@ -1,1 +1,12 @@
 *.php linguist-language=PHP
+
+# Ignore dev stuff when creating zip from git archive
+/node_modules/ export-ignore
+/frontend/src/ export-ignore
+/.gitignore export-ignore
+/.gitattributes export-ignore
+/package.json export-ignore
+/package-lock.json export-ignore
+/gulpfile.js export-ignore
+/README.md export-ignore
+/.env export-ignore

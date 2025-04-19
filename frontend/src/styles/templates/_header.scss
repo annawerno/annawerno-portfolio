@@ -18,7 +18,8 @@
   }
 
   .btn-contact {
-    border: 4px solid $darkSpringGreen;
+    // border: 4px solid $darkSpringGreen;
+    border: none;
     background-color: $seaGreen;
     color: $lightYellow;
     height: fit-content;
@@ -30,9 +31,9 @@
     @include text-button;
 
     &:hover {
-      color: $darkSpringGreen;
+      // color: $seaGreen;
       transform: scale(1.1);
-      background-color: $lightYellow;
+      background-color: $darkSpringGreen;
     }
 
     @media (max-width: 1024px) {

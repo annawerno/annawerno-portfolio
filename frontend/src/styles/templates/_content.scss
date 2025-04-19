@@ -56,7 +56,7 @@
       }
 
       &:hover::after {
-        opacity: 0.85;
+        opacity: 0.95;
         box-shadow: 0px 1px 7px 1px rgba(4, 11, 7, 0.65);
         -webkit-box-shadow: 0px 1px 7px 1px rgba(4, 11, 7, 0.65);
         -moz-box-shadow: 0px 1px 7px 1px rgba(4, 11, 7, 0.65);
@@ -75,18 +75,27 @@
 
       .portfolio__item-text {
         position: absolute;
-        top: 50%;
+        top: 60%;
         left: 50%;
         transform: translate(-50%, -50%);
         opacity: 0;
         transition: opacity 0.3s ease-in-out;
         pointer-events: none;
         color: $portfolioWhite;
-        text-transform: uppercase;
+
         z-index: 99;
-        width: 80%;
+        width: 90%;
         text-align: center;
-        @include text-large;
+
+        .portfolio__item-title {
+          @include text-large;
+          text-transform: uppercase;
+        }
+
+        .portfolio__item-subtitle {
+          color: $portfolioWhite;
+          font-weight: $font-weight-semibold;
+        }
       }
 
       &:hover .portfolio__item-text {
@@ -113,7 +122,7 @@
           background: $portfolioWhite;
           padding: 1.5rem 3rem;
           width: 90%;
-          text-align: center;
+          // text-align: center;
           position: relative;
           overflow-y: scroll;
           max-height: 80%;
@@ -132,11 +141,16 @@
             align-items: center;
             gap: 4rem;
 
+            img {
+              border-radius: 14px;
+            }
+
             .portfolio__cta {
               display: flex;
               justify-content: space-evenly;
               width: 100%;
               font-weight: $font-weight-semibold;
+              @include text-large;
 
               a {
                 transition: all 0.3s ease-in-out;
@@ -149,16 +163,26 @@
             }
             .portfolio__categories {
               width: 80%;
-              display: grid;
-              grid-template-columns: repeat(4, 1fr);
+              display: flex;
+              flex-wrap: wrap;
               gap: 2rem;
 
               li {
-                border: 1px solid $carrotOrange;
-                background-color: $carrotOrange;
                 border-radius: 12px;
                 color: $portfolioWhite;
-                padding: 4px 8px;
+                padding: 6px 12px;
+                text-align: center;
+              }
+
+              .lang-markup {
+                background-color: $carrotOrange;
+              }
+
+              .fw-tools {
+                background-color: $brightPink;
+              }
+              .cms-plugins {
+                background-color: $seaGreen;
               }
             }
           }
@@ -170,6 +194,11 @@
               @include text-large;
               text-transform: uppercase;
               margin-bottom: 2rem;
+            }
+
+            .portfolio__item-subtitle {
+              text-transform: capitalize;
+              @include text-menu;
             }
           }
 
@@ -292,6 +321,12 @@
     font-style: italic;
     padding: 0.5rem 0;
   }
+}
+
+#about-me,
+#portfolio,
+#contact {
+  scroll-margin-top: 126px;
 }
 
 @keyframes pulse {

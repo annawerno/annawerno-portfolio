@@ -1,0 +1,7 @@
+@use "../abstracts" as *;
+@use "../mixins" as *;
+
+.page-title {
+  @include heading-standard;
+  margin-bottom: 2rem;
+}
