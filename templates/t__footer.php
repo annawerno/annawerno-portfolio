@@ -9,7 +9,7 @@
       )); ?>
 
       <a class="f__logo" href="/">
-        <img src="<?= site_url(); ?>/wp-content/uploads/2025/03/annawerno-logo-light.webp" alt="annawerno logo" width="100%"/>
+        <img src="<?php echo get_template_directory_uri(); ?>/img/logos/annawerno-logo-light.webp" alt="annawerno logo" width="100%"/>
       </a>
 
       <button class="scroll-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'});"><?= file_get_contents(get_template_directory() . '/img/icons/back-to-top.svg'); ?></button>

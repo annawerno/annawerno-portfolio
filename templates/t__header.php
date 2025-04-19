@@ -2,7 +2,7 @@
    
         <a class="header__logo" href="/">
 
-          <img src="<?= site_url(); ?>/wp-content/uploads/2025/03/annawerno-logo.webp" alt="annawerno logo" width="100%"/>
+          <img src="<?php echo get_template_directory_uri(); ?>/img/logos/annawerno-logo.webp" alt="annawerno logo" width="100%"/>
         </a>
         <div class="header__menu-container" style="display: flex">
           <button class="btn-contact" onclick="window.location.href='#contact'">Let's chat</button>
