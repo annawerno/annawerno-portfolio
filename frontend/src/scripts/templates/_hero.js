@@ -22,6 +22,7 @@ function typeText(text, index, callback) {
   // Clear the content at the beginning of typing
   if (index === 0) {
     heroHello.innerHTML = "";
+    void heroHello.offsetWidth; // Force reflow to ensure clearing on iOS
   }
 
   // Split the text into "Hello" and the rest
@@ -83,6 +84,7 @@ function deleteText(text, index, callback) {
       deleteText(text, index, callback);
     }, deletingSpeed);
   } else {
+    heroHello.innerHTML = "";
     callback();
   }
 }
