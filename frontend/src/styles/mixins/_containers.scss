@@ -1,5 +1,7 @@
 body {
-  padding-right: 60px;
+  @media (max-width: 768px) {
+    padding-right: 60px;
+  }
 }
 
 .container__fluid {

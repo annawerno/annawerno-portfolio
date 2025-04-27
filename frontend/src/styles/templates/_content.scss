@@ -127,6 +127,11 @@
           overflow-y: scroll;
           max-height: 80%;
           border-radius: 12px;
+
+          @media (max-width: 768px) {
+            padding: 1.5rem 1rem;
+            height: 70%;
+          }
         }
 
         &-body {
@@ -141,6 +146,10 @@
             align-items: center;
             gap: 4rem;
 
+            @media (max-width: 1024px) {
+              gap: 2rem;
+            }
+
             img {
               border-radius: 14px;
             }
@@ -151,6 +160,12 @@
               width: 100%;
               font-weight: $font-weight-semibold;
               @include text-large;
+
+              @media (max-width: 1024px) {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: center;
+              }
 
               a {
                 transition: all 0.3s ease-in-out;
@@ -166,6 +181,11 @@
               display: flex;
               flex-wrap: wrap;
               gap: 2rem;
+
+              @media (max-width: 1024px) {
+                width: 100%;
+                gap: 1rem;
+              }
 
               li {
                 border-radius: 12px;

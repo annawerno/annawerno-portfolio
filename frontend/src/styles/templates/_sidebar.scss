@@ -11,9 +11,7 @@
   border: none;
   transition: width 0.5s ease-out;
   z-index: 1000;
-  width: 5%;
   margin: auto;
-
   display: flex;
   flex-direction: column-reverse;
   // gap: 8rem;
@@ -22,8 +20,10 @@
   padding-top: 20rem;
   padding-bottom: 3rem;
 
-  @media (max-width: 768px) {
-    width: 15%;
+  width: 62px;
+
+  @media (min-width: 1024px) {
+    width: 80px;
   }
 
   p {
