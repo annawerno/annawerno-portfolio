@@ -5,7 +5,7 @@
           <img src="<?php echo get_template_directory_uri(); ?>/img/logos/annawerno-logo.webp" alt="annawerno logo" width="100%"/>
         </a>
         <div class="header__menu-container" style="display: flex">
-          <button class="btn-contact" onclick="window.location.href='#contact'">Let's chat</button>
+          <button class="btn-contact" aria-label="Let's chat" onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })">Let's chat</button>
 
 
 

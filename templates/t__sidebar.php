@@ -16,13 +16,15 @@
                 ?>
                 <div class="sidebar__content-info">
                     <div class="s_c__logo">
-                        <img src="<?= $sidebar__content_logo['url']; ?>"/>
+                        <img src="<?= $sidebar__content_logo['url']; ?>" alt="<?= $sidebar__content_logo['alt']; ?>"/>
                     </div>
                     <h4 class="s_c__text"><?= $sidebar__content_text; ?></h4>
                 </div>
                 <div class="sidebar__content-links">
-                    <a href="<?= $sidebar__content_link_insta; ?>" target="_blank"><?= file_get_contents(get_template_directory() . '/img/socials/instagram.svg'); ?></a>
-                    <a href="<?= $sidebar__content_link_etsy; ?>" target="_blank"><?= file_get_contents(get_template_directory() . '/img/socials/etsy.svg'); ?></a>
+                    <a href="<?= $sidebar__content_link_insta; ?>" target="_blank" rel="noopener noreferrer" 
+                    aria-label="Visit Weave Got This on Instagram"><?= file_get_contents(get_template_directory() . '/img/socials/instagram.svg'); ?></a>
+                    <a href="<?= $sidebar__content_link_etsy; ?>" target="_blank" rel="noopener noreferrer" 
+                    aria-label="Shop Weave Got This on Etsy"><?= file_get_contents(get_template_directory() . '/img/socials/etsy.svg'); ?></a>
                 </div>
 
 

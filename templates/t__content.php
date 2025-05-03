@@ -17,7 +17,7 @@ $args = array(
 $query = new WP_Query($args);
 ?>
 
-<section id="about-me" class="container__fluid">
+<section id="about-me" aria-label="About Me section" class="container__fluid">
     
     <div class="about_me_text"> <?= $about_me; ?></div>
     <div class="about_me_image"><img width="100%" height="auto" src="<?= $about_me_image['url']; ?>" alt="<?= $about_me_image['alt']; ?>" /></div>
@@ -63,7 +63,7 @@ if ($skills->have_posts()) : ?>
 </section>
 */ ?>
 
-<section id="portfolio" class="container__fluid">
+<section id="portfolio" aria-label="Portfolio section" class="container__fluid">
 
     <div class="portfolio__grid">
 
@@ -84,7 +84,7 @@ if ($skills->have_posts()) : ?>
                 <?= the_post_thumbnail('medium'); ?>
             
            <div class="portfolio__item-text">
-                <h4 class="portfolio__item-title"><?= the_title(); ?></h4>
+                <h3 class="portfolio__item-title"><?= the_title(); ?></h3>
                 <p class="portfolio__item-subtitle"><?= $post_subtitle; ?></p>
             </div>
         </a>
@@ -146,14 +146,15 @@ if ($skills->have_posts()) : ?>
 </section>
 
 
-<section id="contact" class="container__fluid">
+<section id="contact" aria-label="Contact section" class="container__fluid">
 
         <p class="contact__heading">Looking for a chat tonic, collab brew or connect elixir? Whatever your flavour, pick your poison below.</p>
 
         <div class="contact__options">
-            <a href="mailto:hello@annawerno.co.uk"><?= file_get_contents(get_template_directory() . '/img/socials/mail.svg'); ?></a>
-            <a href="https://github.com/annawerno" target="_blank"><?= file_get_contents(get_template_directory() . '/img/socials/github.svg'); ?></a>
-            <a href="https://www.linkedin.com/in/annawerno/" target="_blank"><?= file_get_contents(get_template_directory() . '/img/socials/linkedin.svg'); ?></a>
+            <a href="mailto:hello@annawerno.co.uk" aria-label="Send an email to hello@annawerno.co.uk"
+            ><?= file_get_contents(get_template_directory() . '/img/socials/mail.svg'); ?></a>
+            <a href="https://github.com/annawerno" target="_blank" aria-label="Visit my GitHub profile"><?= file_get_contents(get_template_directory() . '/img/socials/github.svg'); ?></a>
+            <a href="https://www.linkedin.com/in/annawerno/" target="_blank" aria-label="Connect with me on LinkedIn"><?= file_get_contents(get_template_directory() . '/img/socials/linkedin.svg'); ?></a>
 
 
         </div>
@@ -167,7 +168,7 @@ if ($skills->have_posts()) : ?>
 
     if ($hellos->have_posts()) : 
     ?>
-        <section id="ref_answers" class="container__fluid">
+        <section id="ref_answers" aria-label="Hello Reference Answers section" class="container__fluid">
 
             <button id="ref_answers-btn" class="accordion main">Peak here for the pop culture references</button>
             <div class="panel">
