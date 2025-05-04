@@ -40,6 +40,15 @@
               color: $carrotOrange;
             }
           }
+
+          @media (max-width: 768px) {
+            font-size: 1.25rem;
+            padding: 0.4rem 0;
+
+            a {
+              padding: 0.4rem 0;
+            }
+          }
         }
       }
 
