@@ -94,11 +94,3 @@ function cpt_hello_ref_query() {
       return $hello_query;
 
 }
-
-
-
-
-?>
-
-
-

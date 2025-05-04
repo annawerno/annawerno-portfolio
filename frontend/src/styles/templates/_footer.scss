@@ -50,8 +50,6 @@
     }
 
     .f__logo {
-      // border: 3px solid hotpink;
-
       grid-column: 1 / 4;
       grid-row: 2 / 3;
       max-width: 190px;
@@ -61,6 +59,12 @@
         grid-column: 3 / 4;
         grid-row: 1 / 2;
         justify-self: end;
+      }
+
+      &__img {
+        width: 100%;
+        height: auto;
+        display: block;
       }
     }
 

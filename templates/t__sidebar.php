@@ -16,7 +16,7 @@
                 ?>
                 <div class="sidebar__content-info">
                     <div class="s_c__logo">
-                        <img src="<?= $sidebar__content_logo['url']; ?>" alt="<?= $sidebar__content_logo['alt']; ?>"/>
+                        <?= wp_get_attachment_image($sidebar__content_logo['id'], 'large', false, [ 'class' => 's_c__logo__img', 'alt' => $sidebar__content_logo['alt'] ]); ?>
                     </div>
                     <h4 class="s_c__text"><?= $sidebar__content_text; ?></h4>
                 </div>

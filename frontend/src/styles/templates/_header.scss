@@ -17,8 +17,14 @@
     padding-right: 5.75rem;
   }
 
-  .header__logo {
+  .custom-logo-link {
     width: clamp(9.375rem, 7.337rem + 10.1902vw, 18.75rem); // 150px -> 300px
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
   }
 
   .btn-contact {

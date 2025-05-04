@@ -5,7 +5,6 @@ $about_me = get_field('f__about_me');
 $about_me_image = get_field('f__about_me_image');
 $a_m_image__alt = isset($about_me_image['alt']) && !empty($about_me_image['alt']) ? $about_me_image['alt'] : ($about_me_image['title'] ?? '');
 
-
 // Portfolio posts
 $args = array(
     'post_type' => 'post',
@@ -20,7 +19,10 @@ $query = new WP_Query($args);
 <section id="about-me" aria-label="About Me section" class="container__fluid">
     
     <div class="about_me_text"> <?= $about_me; ?></div>
-    <div class="about_me_image"><img width="100%" height="auto" src="<?= $about_me_image['url']; ?>" alt="<?= $about_me_image['alt']; ?>" /></div>
+    <div class="about_me_image">
+        <?= wp_get_attachment_image( $about_me_image['id'], 'large', false, [ 'class' => 'about_me_image__img', 'alt' => $a_m_image__alt ] ); ?>
+    </div>
+
     
 
 

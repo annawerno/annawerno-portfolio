@@ -49,3 +49,14 @@ window.onclick = function (event) {
     }
   });
 };
+
+document.addEventListener("DOMContentLoaded", () => {
+  const contactButton = document.querySelector(".btn-contact");
+  const contactSection = document.getElementById("contact");
+
+  if (contactButton && contactSection) {
+    contactButton.addEventListener("click", () => {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    });
+  }
+});

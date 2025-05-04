@@ -76,11 +76,13 @@
       // width: fit-content;
 
       .s_c__logo {
-        width: 40%;
-        margin: 0 auto 1rem;
+        width: 50%;
+        margin: 0 auto 2rem;
 
-        img {
+        &__img {
           width: 100%;
+          height: auto;
+          display: block;
         }
       }
 

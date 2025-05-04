@@ -1,11 +1,15 @@
 <header id="header__container" class="container__fluid">
-   
-        <a class="header__logo" href="/">
 
-          <img src="<?php echo get_template_directory_uri(); ?>/img/logos/annawerno-logo.webp" alt="annawerno logo" width="100%"/>
-        </a>
+        <?php if ( has_custom_logo() ) {
+              the_custom_logo(); 
+          } else { ?>
+              <h1 class="site-title"><?= get_bloginfo( 'name' ); ?></h1>';
+         <?php } 
+        ?>
+
+
         <div class="header__menu-container" style="display: flex">
-          <button class="btn-contact" aria-label="Let's chat" onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })">Let's chat</button>
+          <button class="btn-contact" aria-label="Let's chat" title="Let's chat" tabindex="0">Let's chat</button>
 
 
 

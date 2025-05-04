@@ -17,10 +17,12 @@ function php_variables() {
 
     if ( wp_script_is('scripts', 'enqueued') ) {
 
+      	$hello_sentences = array(); // Initialize to avoid undefined warnings
         $hellos = cpt_hello_ref_query();
+      
 
         if ($hellos->have_posts()) :
-            $hello_sentences = array(); // Initialize to avoid undefined warnings
+            
             while($hellos->have_posts()) : $hellos->the_post();
                 $hello = get_post();
                 $hello_sentences[] = $hello->post_title; 
@@ -34,6 +36,3 @@ function php_variables() {
     }
 }
 add_action('wp_enqueue_scripts', 'php_variables', 20);
-
-
-?>
