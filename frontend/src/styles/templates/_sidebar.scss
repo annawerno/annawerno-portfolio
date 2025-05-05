@@ -9,11 +9,9 @@
   background-color: $brightPink;
   color: $portfolioWhite;
   border: none;
-  transition: width 0.5s ease-out;
+  transition: all 0.5s ease-out;
   z-index: 1000;
-  width: 5%;
   margin: auto;
-
   display: flex;
   flex-direction: column-reverse;
   // gap: 8rem;
@@ -22,14 +20,17 @@
   padding-top: 20rem;
   padding-bottom: 3rem;
 
-  @media (max-width: 768px) {
-    width: 15%;
+  width: 62px;
+
+  @media (min-width: 1024px) {
+    width: 80px;
   }
 
   p {
     @include text-large;
     font-weight: $font-weight-semibold;
     color: $portfolioWhite;
+    color: white;
     transform: rotate(270deg);
     transform-origin: 15% 10%;
     width: max-content;
@@ -43,6 +44,7 @@
 
   &.expanded {
     width: 30%;
+    background-color: #5c2836;
 
     @media (max-width: 768px) {
       width: 70%;
@@ -74,11 +76,13 @@
       // width: fit-content;
 
       .s_c__logo {
-        width: 40%;
-        margin: 0 auto 1rem;
+        width: 50%;
+        margin: 0 auto 2rem;
 
-        img {
+        &__img {
           width: 100%;
+          height: auto;
+          display: block;
         }
       }
 

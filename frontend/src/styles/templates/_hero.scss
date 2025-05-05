@@ -8,11 +8,11 @@
     text-transform: uppercase;
     font-family: "Eczar", serif;
     @include heading-large;
-    min-height: 70vh;
+    min-height: 70dvh;
     // height: 90vh;
 
     @media (min-width: 768px) {
-      min-height: 50vh;
+      min-height: 50dvh;
     }
   }
 }

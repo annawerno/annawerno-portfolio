@@ -13,8 +13,18 @@
   align-items: center;
   padding: 15px;
 
-  .header__logo {
+  @media (min-width: 1024px) {
+    padding-right: 5.75rem;
+  }
+
+  .custom-logo-link {
     width: clamp(9.375rem, 7.337rem + 10.1902vw, 18.75rem); // 150px -> 300px
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
   }
 
   .btn-contact {
@@ -55,6 +65,8 @@
       border: none;
       cursor: pointer;
       margin: auto 0;
+
+      padding-right: 5%;
 
       span {
         display: block;
@@ -97,7 +109,7 @@
 
       display: flex;
       flex-direction: column-reverse;
-      padding: 0 0 2rem 0;
+      padding: 0 0 5.75rem 0;
 
       &.active {
         opacity: 1; /* Make it visible */

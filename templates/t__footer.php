@@ -1,3 +1,11 @@
+<?php 
+
+$footer_logo__url = get_theme_mod('footer_logo');
+
+$footer_logo__id = attachment_url_to_postid($footer_logo__url);
+
+?>
+
 <footer id="footer__container">
   <section class="container__fluid footer__main">
     
@@ -9,8 +17,11 @@
       )); ?>
 
       <a class="f__logo" href="/">
-        <img src="<?php echo get_template_directory_uri(); ?>/img/logos/annawerno-logo-light.webp" alt="annawerno logo" width="100%"/>
+
+        <?= wp_get_attachment_image( $footer_logo__id, 'large', false, [ 'class' => 'f__logo__img', 'alt' => 'footer logo' ] ); ?>
       </a>
+
+
 
       <button class="scroll-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'});"><?= file_get_contents(get_template_directory() . '/img/icons/back-to-top.svg'); ?></button>
 
